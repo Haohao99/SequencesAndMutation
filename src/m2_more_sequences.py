@@ -10,7 +10,7 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Hao Hu.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
@@ -106,6 +106,14 @@ def shortest_string(strings):
     # TODO: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    number = 0
+    for k in range(1, len(strings)):
+        if len(strings[k]) < len(strings[number]):
+            number = k
+
+    return strings[number]
+
+
 
 
 def run_test_index_of_largest_number():
@@ -183,6 +191,13 @@ def index_of_largest_number(numbers, n):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    num = 0
+    for k in range(1,n):
+        if numbers[k] > numbers[num]:
+            num = k
+
+    return num
+
 
 
 # ----------------------------------------------------------------------
@@ -238,6 +253,12 @@ def number_of_stutters(s):
     # TODO: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(len(s)-1):
+        if s[k] == s[k+1]:
+            count += 1
+
+    return count
 
 
 def run_test_is_palindrome():
@@ -317,7 +338,12 @@ def is_palindrome(s):
     #   above are particularly good examples to work by hand.
     ####################################################################
     # ------------------------------------------------------------------
+    last = len(s) - 1
+    for k in range(len(s)):
+        if s[k] != s[last-k]:
+            return False
 
+    return True
 
 # ----------------------------------------------------------------------
 # Some problems loop (iterate) through two or more sequences
@@ -378,6 +404,12 @@ def count_same(sequence1, sequence2):
     # TODO: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            count += 1
+
+    return count
 
 
 # ----------------------------------------------------------------------
