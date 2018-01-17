@@ -4,7 +4,7 @@ In this module, you mutate by DELETING elements of a list.
 
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT_YOUR_NAME_HERE.
+         and Hao Hu.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m6_mutation
@@ -72,6 +72,12 @@ def RETURN_delete_negatives(numbers):
     #             m6_mutation.run_test(...)
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
+    list = []
+    for k in range(len(numbers)):
+        if numbers[k] >= 0:
+            list.append(numbers[k])
+
+    return list
 
 
 def run_test_MUTATE_delete_negatives():
@@ -137,6 +143,11 @@ def MUTATE_delete_negatives(numbers):
     #       Take a stab at this problem,
     #       then see the solutions posted on Piazza.
     #       See those solutions even if your approach passes the tests.
+    for k in range(len(numbers)-1,-1,-1):
+        if numbers[k] < 0:
+            del numbers[k]
+
+
 
 
 # ----------------------------------------------------------------------
